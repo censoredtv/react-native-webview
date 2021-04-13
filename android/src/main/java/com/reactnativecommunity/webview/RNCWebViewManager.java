@@ -1282,6 +1282,11 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
     }
 
     @Override
+    protected void onWindowVisibilityChanged(int visibility) {
+      if (visibility != View.GONE) super.onWindowVisibilityChanged(View.VISIBLE);
+    }
+
+    @Override
     public void onHostResume() {
       // do nothing
     }
